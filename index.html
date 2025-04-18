@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Casamento Adrielly e Gustavo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caladea&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Caladea', serif;
+      background-color: #fff0f5;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #000;
+      color: #f5f5dc;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #f5f5dc;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background-color: #f5f5dc;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #f5f5dc;
+      margin: 4px 0;
+    }
+
+    html {
+  scroll-padding-top: 80px; /* Ajuste conforme a altura do seu header */
+}
+
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      background: url('imgs/gustavoedri_background.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timeline {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: #d3a4c2;
+      z-index: -1;
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 45%;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
+    }
+
+    .timeline-item.left {
+      align-self: flex-start;
+      margin-left: 0;
+    }
+
+    .timeline-item.right {
+      align-self: flex-end;
+      margin-right: 0;
+    }
+
+    .timeline-item h2 {
+      margin: 0;
+      font-size: 2rem;
+      color: #b03060;
+    }
+
+    .timeline-item p,
+    .timeline-item form {
+      font-size: 1.1rem;
+    }
+
+    .botao {
+      background-color: #ad9c7e;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .botao:hover {
+      background-color: #e75480;
+    }
+
+    .mensagem-form input,
+    .mensagem-form textarea {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Caladea', serif;
+    }
+
+    .polaroid {
+      background: white;
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .timeline-row {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .timeline-row.right {
+      flex-direction: row-reverse;
+    }
+
+    footer {
+      background-color: #000;
+      color: #f5f5dc;
+      padding: 15px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ad9c7e;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      z-index: 999;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 10px 20px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .timeline-item,
+      .timeline-item.left,
+      .timeline-item.right {
+        width: 100%;
+        align-self: center;
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .timeline-row.right {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/01/25/audio_d54dcb6e87.mp3?filename=wedding-piano-music-13933.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <header>
+    <div class="logo">Adrielly e Gustavo</div>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <a href="#historia">Nossa História</a>
+      <a href="#fotos">Fotos</a>
+     <!-- <a href="#mensagem">Mensagem</a>-->
+      <a href="#presente">Presente</a>
+    </nav>
+  </header>
+
+  <div class="hero"></div>
+
+  <div class="timeline">
+    <div id="historia" class="timeline-row">
+      <div class="timeline-item left">
+        <h2>Nossa História</h2>
+        <p>Adrielly e Gustavo se conheceram em...</p>
+      </div>
+      <div class="polaroid">
+        <img src="imgs/gustavoedri_historia.jpg" alt="Foto história" style="width:100%">
+      </div>
+    </div>
+
+    <div id="fotos" class="timeline-row right">
+      <div class="timeline-item right">
+        <h2>Fotos</h2>
+        <p>Ajude-nos a guardar as melhores lembranças! Clique no link e envie suas fotos para nossa pasta do Drive.</p>
+        <!-- Link para o Google Drive -->
+        <a href="https://drive.google.com/drive/folders/17RX0W_W5XYkBdZ8mq1_bVlzwBHKTp-5U" target="_blank">
+          <button class="botao">Link</button>
+        </a>
+      </div>
+      <div class="polaroid">
+        <img src="imgs/gustavoedri_fotos.jpg" alt="Foto fotos" style="width:100%">
+      </div>
+    </div>
+    
+
+   <!-- <div id="mensagem" class="timeline-row">
+      <div class="timeline-item left">
+        <h2>Mensagem</h2>
+        <p>Adoraríamos saber o que você achou da festa e receber seus votos de felicidade! 💌</p>
+        <form class="mensagem-form" id="mensagemForm">
+          <input type="text" id="nome" placeholder="Seu nome" required>
+          <textarea id="texto" placeholder="Escreva sua mensagem ou voto de felicidade aqui" rows="5" required></textarea>
+          <button class="botao" type="submit">Enviar</button>
+        </form>
+        <div id="mensagemResposta" style="display:none; margin-top: 20px;">
+          <h3>Obrigado pela sua mensagem!</h3>
+          <p><strong>Nome:</strong> <span id="respostaNome"></span></p>
+          <p><strong>Mensagem:</strong> <span id="respostaTexto"></span></p>
+        </div>
+      </div>
+      <div class="polaroid">
+        <img src="imgs/gustavoedri_mensagem.jpg" alt="Foto mensagem" style="width:100%">
+      </div>
+    </div>
+-->
+    <div id="presente" class="timeline-row left">
+      <div class="timeline-item left">
+        <h2>Presente</h2>
+        <p>Sua presença foi o maior presente! Mas, se desejar nos enviar um carinho, aceitamos com alegria via MB Way 😊</p>
+        <button class="botao">
+          <!-- Usando o ícone do MB Way da pasta imgs -->
+          <img src="imgs/mbway.png" alt="MB Way" style="height: 30px">
+          
+          <!-- Número de telefone para o MB Way -->
+          963 265 628
+        </button>
+      </div>
+      <div class="polaroid">
+        <img src="imgs/gustavoedri_presente.jpg" alt="Foto presente" style="width:100%">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Obrigado por ter feito parte do nosso grande dia! ❤️
+  </footer>
+
+  <button id="topBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      timelineItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.opacity = 1;
+        }, index * 200);
+      });
+    });
+
+    const form = document.getElementById("mensagemForm");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      const nome = document.getElementById("nome").value;
+      const texto = document.getElementById("texto").value;
+      
+      document.getElementById("respostaNome").textContent = nome;
+      document.getElementById("respostaTexto").textContent = texto;
+      
+      document.getElementById("mensagemResposta").style.display = "block";
+      form.reset();
+    });
+
+    window.onscroll = function() {
+      let topBtn = document.getElementById("topBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>
