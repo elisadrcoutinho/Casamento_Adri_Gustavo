@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Casamento Adrielly e Gustavo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Caladea&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -13,7 +14,7 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Caladea', serif;
+      font-family: 'Quicksand', sans-serif;
       background-color: #fff0f5;
       color: #222;
       scroll-behavior: smooth;
@@ -32,7 +33,7 @@
     }
 
     .logo {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Dancing Script', cursive;
       font-size: 1.8rem;
     }
 
@@ -136,7 +137,7 @@
 
     .timeline-item h2 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 3rem;
       color: #b03060;
     }
 
@@ -171,7 +172,7 @@
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      font-family: 'Caladea', serif;
+      font-family: 'Quicksand', sans-serif;
     }
 
     .polaroid {
@@ -192,6 +193,22 @@
     .timeline-row.right {
       flex-direction: row-reverse;
     }
+
+    .icone-livro,
+    .icone-camera,
+    .icone-presente,
+    .icone-mensagem {
+      width: 60px; /* Ajuste o tamanho conforme preferir */
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    h1, h2 {
+  font-family: 'Dancing Script', cursive;
+}
+
+
+
 
     footer {
       background-color: #000;
@@ -267,14 +284,81 @@
         flex-direction: column;
       }
     }
+
+    .titulo-centralizado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo geral das mensagens */
+#mensagensList div {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efeito de hover nas mensagens */
+#mensagensList div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo do nome do usuário */
+#mensagensList div strong {
+    font-size: 1em;
+    font-size: dancing-script;
+    font-weight: bold;
+    color: black; /* Cor do nome */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do texto da mensagem */
+#mensagensList div p:last-child {
+    font-size: 1em;
+    color: black;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+/* Caixa de entrada para mensagens */
+.mensagem-form {
+    margin-top: 20px;
+}
+
+.mensagem-form input, .mensagem-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.mensagem-form button {
+    background-color: #ad9c7e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.mensagem-form button:hover {
+    background-color: #e75480;
+}
+
+
   </style>
 </head>
 <body>
 
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2023/01/25/audio_d54dcb6e87.mp3?filename=wedding-piano-music-13933.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio.
-  </audio>
 
   <header>
     <div class="logo">Adrielly e Gustavo</div>
@@ -284,7 +368,7 @@
     <nav>
       <a href="#historia">Nossa História</a>
       <a href="#fotos">Fotos</a>
-     <!-- <a href="#mensagem">Mensagem</a>-->
+     <a href="#mensagem">Mensagem</a>
       <a href="#presente">Presente</a>
     </nav>
   </header>
@@ -294,17 +378,33 @@
   <div class="timeline">
     <div id="historia" class="timeline-row">
       <div class="timeline-item left">
+        <div class="titulo-centralizado">
+        <img src="imgs/novela-romantica.png" alt="Ícone Livro" class="icone-livro">
         <h2>Nossa História</h2>
-        <p>Adrielly e Gustavo se conheceram em...</p>
       </div>
+
+        <p>Adrielly e Gustavo se conheceram em 2023. Ambos já moravam em Braga, em Portugal. O encontro aconteceu em um passeio entre amigos, durante uma atividade divertida de tiro à laser. No meio das risadas, da adrenalina e das conversas descontraídas, algo começou a surgir entre os dois — ainda sutil, mas já especial.</p>
+
+          <p>Algumas semanas depois, em plena época de Natal, o grupo de amigos decidiu fazer uma viagem para Vigo, na Espanha. Foi ali que tudo realmente começou. Entre luzes natalinas, ruas encantadoras e momentos compartilhados, os dois se encontraram de verdade. Não foi apenas uma conexão. Foi um reconhecimento. Como se seus corações já soubessem que pertenciam um ao outro.</p>
+          
+          <p>A partir dali, não se desgrudaram mais. Cada dia juntos parecia confirmar o que sentiam desde o início: tinham encontrado um no outro aquilo que tanto buscavam. Dois meses depois, veio o noivado — rápido para alguns, mas para eles, era a certeza mais doce e clara que já tiveram.</p>
+          
+          <p>Um ano e meio se passou voando. Cheio de planos, sonhos construídos a dois, cumplicidade, muitos desafios e um amor que só crescia. E então, finalmente, chegou o grande dia: o casamento. Agora, estamos prontos para o próximo capítulo da nossa história, e queremos celebrar com as pessoas que mais amamos!</p>
+      </div>
+      
       <div class="polaroid">
         <img src="imgs/gustavoedri_historia.jpg" alt="Foto história" style="width:100%">
       </div>
     </div>
+    
+
 
     <div id="fotos" class="timeline-row right">
       <div class="timeline-item right">
+        <div class="titulo-centralizado">
+        <img src="imgs/camera.png" alt="Ícone câmera" class="icone-camera">
         <h2>Fotos</h2>
+        </div>
         <p>Ajude-nos a guardar as melhores lembranças! Clique no link e envie suas fotos para nossa pasta do Drive.</p>
         <!-- Link para o Google Drive -->
         <a href="https://drive.google.com/drive/folders/17RX0W_W5XYkBdZ8mq1_bVlzwBHKTp-5U" target="_blank">
@@ -317,29 +417,12 @@
     </div>
     
 
-   <!-- <div id="mensagem" class="timeline-row">
+    <div id="presente" class="timeline-row">
       <div class="timeline-item left">
-        <h2>Mensagem</h2>
-        <p>Adoraríamos saber o que você achou da festa e receber seus votos de felicidade! 💌</p>
-        <form class="mensagem-form" id="mensagemForm">
-          <input type="text" id="nome" placeholder="Seu nome" required>
-          <textarea id="texto" placeholder="Escreva sua mensagem ou voto de felicidade aqui" rows="5" required></textarea>
-          <button class="botao" type="submit">Enviar</button>
-        </form>
-        <div id="mensagemResposta" style="display:none; margin-top: 20px;">
-          <h3>Obrigado pela sua mensagem!</h3>
-          <p><strong>Nome:</strong> <span id="respostaNome"></span></p>
-          <p><strong>Mensagem:</strong> <span id="respostaTexto"></span></p>
-        </div>
-      </div>
-      <div class="polaroid">
-        <img src="imgs/gustavoedri_mensagem.jpg" alt="Foto mensagem" style="width:100%">
-      </div>
-    </div>
--->
-    <div id="presente" class="timeline-row left">
-      <div class="timeline-item left">
+        <div class="titulo-centralizado">
+        <img src="imgs/caixa-de-presente.png" alt="Ícone Caixa de Presente" class="icone-presente">
         <h2>Presente</h2>
+        </div>
         <p>Sua presença foi o maior presente! Mas, se desejar nos enviar um carinho, aceitamos com alegria via MB Way 😊</p>
         <button class="botao">
           <!-- Usando o ícone do MB Way da pasta imgs -->
@@ -353,6 +436,28 @@
         <img src="imgs/gustavoedri_presente.jpg" alt="Foto presente" style="width:100%">
       </div>
     </div>
+
+
+    <div id="mensagem" class="timeline-row right">
+      <div class="timeline-item right">
+        <div class="titulo-centralizado">
+          <img src="imgs/bate-papo.png" alt="Ícone Mensagem" class="icone-mensagem">
+          <h2>Mensagem</h2>
+        </div>
+        <p>Adoraríamos saber o que você achou da festa e receber seus votos de felicidade!</p>
+        <form class="mensagem-form" id="mensagemForm">
+          <input type="text" id="nome" placeholder="Seu nome" required>
+          <textarea id="texto" placeholder="Escreva sua mensagem ou voto de felicidade aqui" rows="5" required></textarea>
+          <button class="botao" type="submit">Enviar</button>
+        </form>
+        <div id="mensagensList" style="margin-top: 20px;"></div>
+      </div>
+      <div class="polaroid">
+        <img src="imgs/gustavoedri_mensagem.jpg" alt="Foto mensagem" style="width:100%">
+      </div>
+    </div>
+    
+
   </div>
 
   <footer>
@@ -394,5 +499,52 @@
       }
     };
   </script>
+
+<script>
+  
+  document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('mensagemForm');
+  const mensagensList = document.getElementById('mensagensList');
+
+  // Carrega mensagens salvas
+  const mensagens = JSON.parse(localStorage.getItem('mensagens')) || [];
+
+  function renderMensagens() {
+    mensagensList.innerHTML = '';
+    mensagens.forEach(msg => {
+      const div = document.createElement('div');
+      div.style.borderTop = "1px solid #ccc";
+      div.style.marginTop = "10px";
+      div.style.paddingTop = "10px";
+      div.classList.add('mensagem'); // Adicionando classe para aplicar os novos estilos
+      div.innerHTML = `
+        <p><strong>${msg.nome}:</strong></p>
+        <p>${msg.texto}</p>
+      `;
+      mensagensList.appendChild(div);
+    });
+  }
+
+  renderMensagens();
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value.trim();
+    const texto = document.getElementById('texto').value.trim();
+
+    if (nome && texto) {
+      mensagens.push({ nome, texto });
+      localStorage.setItem('mensagens', JSON.stringify(mensagens));
+      form.reset();
+      renderMensagens();
+    }
+  });
+});
+
+
+</script>
+
+
+
 </body>
 </html>
